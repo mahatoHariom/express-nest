@@ -1,7 +1,6 @@
 import {
   Body,
   ClassSerializerInterceptor,
-  // ClassSerializerInterceptor,
   Controller,
   Get,
   HttpCode,
@@ -29,11 +28,9 @@ import { Tokens } from './types';
 import { AtGuard, RtGuard } from './guards';
 import { CACHE_MANAGER, CacheInterceptor } from '@nestjs/cache-manager';
 import { UserDto } from '../user/entities/user.entity';
-// import { SerializeInterceptor } from 'src/common/serializerInterceptor';
-
 @ApiTags('Auth Routes')
 @Controller('auth')
-export class AuthController {
+export class AuthController{
   constructor(
     private authService: AuthService,
     @Inject(CACHE_MANAGER) private readonly cacheManager: Cache,
